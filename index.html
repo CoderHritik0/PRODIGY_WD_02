@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Prodigy WD 02 - Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <div class="container">
+        <h1>STOPWATCH</h1>
+        <div id="time">
+            <span class="digit" id="hr">00</span>
+            <span class="text">Hr</span>
+            <span class="digit" id="min">00</span>
+            <span class="text">Min</span>
+            <span class="digit" id="sec">00</span>
+            <span class="text">Sec</span>
+        </div>
+        <div id="controls">
+            <button class="btn" id="start">Start</button>
+            <button class="btn" id="stop">Stop</button>
+            <button class="btn" id="reset">Reset</button>
+            <button class="btn" id="lap">Lap</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
