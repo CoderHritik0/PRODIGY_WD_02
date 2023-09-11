@@ -3,11 +3,13 @@ let minute = 0;
 let second = 0;
 let count = 0;
 let timer;
+let lapCount = 0;
 
 let startBtn = document.getElementById("start");
 let stopBtn = document.getElementById("stop");
 let resetBtn = document.getElementById("reset");
 let lapBtn = document.getElementById("lap");
+let lapList = document.getElementById("lap-list");
 
 startBtn.addEventListener("click", function () {
   timer = true;
@@ -27,9 +29,20 @@ resetBtn.addEventListener("click", function () {
   document.getElementById("hr").innerHTML = "00";
   document.getElementById("min").innerHTML = "00";
   document.getElementById("sec").innerHTML = "00";
+  lapList.innerHTML = "";
+  lapCount = 0;
 });
 
-lapBtn.addEventListener("click", function () {});
+lapBtn.addEventListener("click", function () {
+  if (lapCount == 0) {
+    lapList.innerHTML = `<span class='item'><b>SR.NO</b></span><span class='item'><b>Lap Name</b></span><span class='item'><b>Time</b></span>`;
+  }
+  lapCount++;
+  let curhr = document.getElementById("hr").innerHTML;
+  let curmin = document.getElementById("min").innerHTML;
+  let cursec = document.getElementById("sec").innerHTML;
+  lapList.innerHTML += `<span class='item'>${lapCount}</span><span class='item'>Lap ${lapCount}</span><span class='item'>${curhr}:${curmin}:${cursec}</span>`;
+});
 
 function stopWatch() {
   if (timer) {
